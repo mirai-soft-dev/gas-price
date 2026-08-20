@@ -1,0 +1,36 @@
+name: Opinet Crawler
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 매일 자정(UTC 기준) 실행
+  workflow_dispatch:     # 수동 실행 가능
+
+permissions:
+  contents: write
+
+jobs:
+  run-crawler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run crawler script
+        env:
+          OPINET_API_KEY: ${{ secrets.OPINET_API_KEY }}
+        run: python crawler.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.io"
+          git add data/price.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update daily price data" && git push)
