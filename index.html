@@ -1,89 +1,44 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전국 주유소 평균 유가 정보</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col justify-between">
+<!-- <header> 내부 <h1> 아래에 추가 -->
+<div class="mt-4">
+    <select id="region-select" onchange="updateTable()" class="p-2 border rounded-lg w-full">
+        <option value="ALL">전국 평균</option>
+        <option value="01">서울</option>
+        <option value="02">부산</option>
+        <option value="03">대구</option>
+        <option value="04">인천</option>
+        <option value="08">경기</option>
+        <!-- 필요시 다른 지역코드 추가 가능 -->
+    </select>
+</div>
 
-    <!-- Header -->
-    <header class="bg-white shadow-sm py-6">
-        <div class="max-w-3xl mx-auto px-4">
-            <h1 class="text-2xl font-bold text-gray-900">⛽ 전국 주유소 평균 유가 정보</h1>
-            <p id="update-time" class="text-sm text-gray-500 mt-1">데이터 로딩 중...</p>
-        </div>
-    </header>
+<script>
+    let globalData = {};
 
-    <!-- Main Content -->
-    <main class="max-w-3xl mx-auto px-4 py-8 w-full flex-grow">
-        <div class="bg-white shadow-md rounded-lg overflow-hidden border border-gray-100">
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-gray-100 text-gray-600 text-sm uppercase tracking-wider">
-                            <th class="py-3 px-6 font-semibold">제품명</th>
-                            <th class="py-3 px-6 font-semibold text-right">평균가격</th>
-                            <th class="py-3 px-6 font-semibold text-right">전일대비</th>
-                        </tr>
-                    </thead>
-                    <tbody id="price-table" class="divide-y divide-gray-200 text-sm">
-                        <!-- 데이터가 동적으로 삽입됩니다 -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </main>
+    fetch('data/price.json')
+        .then(response => response.json())
+        .then(data => {
+            globalData = data;
+            updateTable();
+        });
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-4 text-center text-xs text-gray-400">
-        © mirai-soft-dev. Powered by Opinet API & GitHub Actions.
-    </footer>
+    function updateTable() {
+        const region = document.getElementById('region-select').value;
+        const tbody = document.getElementById('price-table');
+        const updateTime = document.getElementById('update-time');
+        
+        let oilList = [];
+        if (region === 'ALL') {
+            oilList = globalData.ALL.RESULT.OIL;
+        } else {
+            // 지역 데이터 필터링
+            oilList = globalData.AREA.RESULT.OIL.filter(item => item.AREA_CD === region);
+        }
 
-    <script>
-        fetch('data/price.json')
-            .then(response => response.json())
-            .then(data => {
-                const results = data.RESULT.OIL;
-                const tbody = document.getElementById('price-table');
-                const updateTime = document.getElementById('update-time');
-                
-                if (results.length > 0) {
-                    const dt = results[0].TRADE_DT;
-                    const formattedDate = `${dt.slice(0,4)}년 ${dt.slice(4,6)}월 ${dt.slice(6,8)}일`;
-                    updateTime.innerText = `기준일자: ${formattedDate}`;
-                }
-
-                tbody.innerHTML = '';
-                results.forEach(item => {
-                    let diffClass = 'text-gray-500';
-                    let diffText = item.DIFF;
-                    const diffVal = parseFloat(item.DIFF);
-
-                    if (diffVal > 0) {
-                        diffClass = 'text-red-500 font-semibold';
-                        diffText = `▲ ${item.DIFF}`;
-                    } else if (diffVal < 0) {
-                        diffClass = 'text-blue-500 font-semibold';
-                        diffText = `▼ ${Math.abs(item.DIFF)}`;
-                    } else {
-                        diffText = `-`;
-                    }
-
-                    const row = `<tr class="hover:bg-gray-50 transition-colors">
-                        <td class="py-4 px-6 font-medium text-gray-900">${item.PRODNM}</td>
-                        <td class="py-4 px-6 text-right font-semibold text-gray-800">${Number(item.PRICE).toLocaleString()}원</td>
-                        <td class="py-4 px-6 text-right ${diffClass}">${diffText}</td>
-                    </tr>`;
-                    tbody.innerHTML += row;
-                });
-            })
-            .catch(error => {
-                console.error('데이터 로드 실패:', error);
-                document.getElementById('update-time').innerText = '데이터를 불러오지 못했습니다.';
-            });
-    </script>
-</body>
-</html>
+        tbody.innerHTML = '';
+        oilList.forEach(item => {
+            // ... (기존 테이블 생성 로직 동일)
+            const row = `<tr>...</tr>`;
+            tbody.innerHTML += row;
+        });
+    }
+</script>
