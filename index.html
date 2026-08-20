@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>전국 주유소 유가 정보</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-100 min-h-screen p-6">
-    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-6">
-        <h1 class="text-2xl font-bold text-gray-800 mb-6">지역별 주유소 유가 정보</h1>
+<body class="bg-gray-100 min-h-screen">
+    <!-- 모바일 좌우 마진 최소화 -->
+    <div class="w-full mx-auto bg-white shadow-md p-2 sm:p-4 space-y-4">
+        <h1 class="text-lg font-bold text-gray-800 px-1">전국 유가 정보</h1>
 
-        <!-- 지역 선택 드롭다운 -->
-        <div class="mb-6">
-            <label for="region-select" class="block text-sm font-medium text-gray-700 mb-2">지역 선택</label>
-            <select id="region-select" class="p-2 border border-gray-300 rounded-lg w-full bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <!-- 지역 선택 -->
+        <div class="px-1">
+            <select id="region-select" class="p-2 border border-gray-300 rounded-lg w-full bg-white text-sm">
                 <option value="ALL">전국 평균</option>
                 <option value="01">서울</option>
                 <option value="02">부산</option>
@@ -36,21 +36,28 @@
             </select>
         </div>
 
-        <!-- 유가 정보 테이블 -->
+        <!-- 그래프 영역: 패딩 최소화 -->
+        <div class="bg-gray-50 p-1 rounded-lg border border-gray-200">
+            <div class="h-64">
+                <canvas id="regionComparisonChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 테이블 영역: px-0으로 여백 제거 -->
         <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
+            <table class="w-full text-[11px] sm:text-sm text-center border-collapse">
+                <thead class="bg-gray-100">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">지역</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">고급휘발유</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">휘발유</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">자동차용경유</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">실내등유</th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">자동차용부탄</th>
+                        <th class="p-1 border">지역</th>
+                        <th class="p-1 border">고급</th>
+                        <th class="p-1 border">휘발유</th>
+                        <th class="p-1 border">경유</th>
+                        <th class="p-1 border">등유</th>
+                        <th class="p-1 border">부탄</th>
                     </tr>
                 </thead>
-                <tbody id="oil-table-body" class="bg-white divide-y divide-gray-200">
-                    <!-- 데이터가 동적으로 삽입됩니다 -->
+                <tbody id="oil-table-body" class="divide-y">
+                    <!-- 데이터 삽입 -->
                 </tbody>
             </table>
         </div>
@@ -58,79 +65,55 @@
 
     <script>
         const oilData = {
-            "ALL": { name: "전국 평균", premium: "2,325.28", gasoline: "1,861.89", diesel: "1,845.34", kerosene: "1,580.95", lpg: "1,099.14" },
-            "01": { name: "서울", premium: "2,410.00", gasoline: "1,908.43", diesel: "1,885.10", kerosene: "1,620.00", lpg: "1,120.00" },
-            "02": { name: "부산", premium: "2,280.00", gasoline: "1,843.99", diesel: "1,825.00", kerosene: "1,560.00", lpg: "1,090.00" },
-            "03": { name: "대구", premium: "2,270.00", gasoline: "1,835.01", diesel: "1,815.00", kerosene: "1,550.00", lpg: "1,085.00" },
-            "04": { name: "인천", premium: "2,300.00", gasoline: "1,848.86", diesel: "1,830.00", kerosene: "1,570.00", lpg: "1,095.00" },
-            "05": { name: "광주", premium: "2,290.00", gasoline: "1,840.00", diesel: "1,820.00", kerosene: "1,565.00", lpg: "1,088.00" },
-            "06": { name: "대전", premium: "2,295.00", gasoline: "1,839.69", diesel: "1,822.00", kerosene: "1,568.00", lpg: "1,090.00" },
-            "07": { name: "울산", premium: "2,275.00", gasoline: "1,841.00", diesel: "1,821.00", kerosene: "1,560.00", lpg: "1,087.00" },
-            "08": { name: "경기", premium: "2,310.00", gasoline: "1,858.10", diesel: "1,840.00", kerosene: "1,575.00", lpg: "1,098.00" },
-            "09": { name: "강원", premium: "2,340.00", gasoline: "1,870.00", diesel: "1,850.00", kerosene: "1,590.00", lpg: "1,105.00" },
-            "10": { name: "충북", premium: "2,315.00", gasoline: "1,860.00", diesel: "1,842.00", kerosene: "1,582.00", lpg: "1,100.00" },
-            "11": { name: "충남", premium: "2,320.00", gasoline: "1,865.00", diesel: "1,848.00", kerosene: "1,585.00", lpg: "1,102.00" },
-            "12": { name: "전북", premium: "2,285.00", gasoline: "1,845.00", diesel: "1,825.00", kerosene: "1,565.00", lpg: "1,092.00" },
-            "13": { name: "전남", premium: "2,290.00", gasoline: "1,850.00", diesel: "1,832.00", kerosene: "1,570.00", lpg: "1,095.00" },
-            "14": { name: "경북", premium: "2,295.00", gasoline: "1,848.00", diesel: "1,830.00", kerosene: "1,568.00", lpg: "1,094.00" },
-            "15": { name: "경남", premium: "2,288.00", gasoline: "1,846.00", diesel: "1,828.00", kerosene: "1,566.00", lpg: "1,093.00" },
-            "16": { name: "제주", premium: "2,500.00", gasoline: "1,950.00", diesel: "1,930.00", kerosene: "1,680.00", lpg: "1,180.00" },
-            "17": { name: "세종", premium: "2,305.00", gasoline: "1,852.00", diesel: "1,835.00", kerosene: "1,572.00", lpg: "1,096.00" }
+            "ALL": { code: "ALL", name: "전국", premium: "2325", gasoline: "1861", diesel: "1845", kerosene: "1580", lpg: "1099" },
+            "01": { code: "01", name: "서울", premium: "2410", gasoline: "1908", diesel: "1885", kerosene: "1620", lpg: "1120" },
+            "02": { code: "02", name: "부산", premium: "2280", gasoline: "1843", diesel: "1825", kerosene: "1560", lpg: "1090" },
+            "03": { code: "03", name: "대구", premium: "2270", gasoline: "1835", diesel: "1815", kerosene: "1550", lpg: "1085" },
+            "04": { code: "04", name: "인천", premium: "2300", gasoline: "1848", diesel: "1830", kerosene: "1570", lpg: "1095" },
+            "05": { code: "05", name: "광주", premium: "2290", gasoline: "1840", diesel: "1820", kerosene: "1565", lpg: "1088" },
+            "06": { code: "06", name: "대전", premium: "2295", gasoline: "1839", diesel: "1822", kerosene: "1568", lpg: "1090" },
+            "07": { code: "07", name: "울산", premium: "2275", gasoline: "1841", diesel: "1821", kerosene: "1560", lpg: "1087" },
+            "08": { code: "08", name: "경기", premium: "2310", gasoline: "1858", diesel: "1840", kerosene: "1575", lpg: "1098" },
+            "09": { code: "09", name: "강원", premium: "2340", gasoline: "1870", diesel: "1850", kerosene: "1590", lpg: "1105" },
+            "10": { code: "10", name: "충북", premium: "2315", gasoline: "1860", diesel: "1842", kerosene: "1582", lpg: "1100" },
+            "11": { code: "11", name: "충남", premium: "2320", gasoline: "1865", diesel: "1848", kerosene: "1585", lpg: "1102" },
+            "12": { code: "12", name: "전북", premium: "2285", gasoline: "1845", diesel: "1825", kerosene: "1565", lpg: "1092" },
+            "13": { code: "13", name: "전남", premium: "2290", gasoline: "1850", diesel: "1832", kerosene: "1570", lpg: "1095" },
+            "14": { code: "14", name: "경북", premium: "2295", gasoline: "1848", diesel: "1830", kerosene: "1568", lpg: "1094" },
+            "15": { code: "15", name: "경남", premium: "2288", gasoline: "1846", diesel: "1828", kerosene: "1566", lpg: "1093" },
+            "16": { code: "16", name: "제주", premium: "2500", gasoline: "1950", diesel: "1930", kerosene: "1680", lpg: "1180" },
+            "17": { code: "17", name: "세종", premium: "2305", gasoline: "1852", diesel: "1835", kerosene: "1572", lpg: "1096" }
         };
 
-        function updateTable() {
-            const selectElement = document.getElementById('region-select');
-            
-            if (!selectElement) {
-                console.error("❌ 에러: 'region-select' ID를 가진 요소를 찾을 수 없습니다.");
-                return;
-            }
+        let comparisonChart;
 
-            const selectedCode = selectElement.value;
-            console.log("👉 선택된 지역 코드 (value):", selectedCode);
-
-            const data = oilData[selectedCode];
-            console.log("👉 매칭된 데이터 객체:", data);
-
-            const tbody = document.getElementById('oil-table-body');
-            if (!tbody) {
-                console.error("❌ 에러: 'oil-table-body' ID를 가진 요소를 찾을 수 없습니다.");
-                return;
-            }
-
-            if (!data) {
-                console.warn("⚠️ 경고: 해당 코드에 매칭되는 데이터가 없습니다.");
-                tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-4 text-center text-gray-500">데이터가 없습니다.</td></tr>`;
-                return;
-            }
-
-            tbody.innerHTML = `
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${data.name}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.premium}원</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.gasoline}원</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.diesel}원</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.kerosene}원</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${data.lpg}원</td>
-                </tr>
-            `;
-            console.log("✅ 테이블 업데이트 완료");
+        function initChart() {
+            const ctx = document.getElementById('regionComparisonChart').getContext('2d');
+            const dataArr = Object.values(oilData);
+            comparisonChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dataArr.map(d => d.name),
+                    datasets: [{ data: dataArr.map(d => d.gasoline), backgroundColor: '#3b82f6' }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { font: { size: 9 } } } } }
+            });
         }
 
-        // HTML 태그 내 onchange 대신 표준 자바스크립트 이벤트 리스너 부착
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("🚀 DOM 로드 완료, 이벤트 리스너 등록 중...");
-            const selectElement = document.getElementById('region-select');
+        function updateView() {
+            const val = document.getElementById('region-select').value;
+            const data = oilData[val];
+            document.getElementById('oil-table-body').innerHTML = `<tr><td class="p-1 border">${data.name}</td><td class="p-1 border">${data.premium}</td><td class="p-1 border">${data.gasoline}</td><td class="p-1 border">${data.diesel}</td><td class="p-1 border">${data.kerosene}</td><td class="p-1 border">${data.lpg}</td></tr>`;
             
-            if (selectElement) {
-                selectElement.addEventListener('change', updateTable);
-                console.log("✅ 'change' 이벤트 리스너 등록 성공");
-            } else {
-                console.error("❌ select 요소를 찾지 못해 이벤트를 걸 수 없습니다.");
-            }
+            // 그래프 하이라이트
+            comparisonChart.data.datasets[0].backgroundColor = Object.values(oilData).map(d => d.code === val ? '#f97316' : '#3b82f6');
+            comparisonChart.update();
+        }
 
-            // 최초 실행
-            updateTable();
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('region-select').addEventListener('change', updateView);
+            initChart();
+            updateView();
         });
     </script>
 </body>
