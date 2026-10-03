@@ -3,39 +3,39 @@
         "RESULT": {
             "OIL": [
                 {
-                    "TRADE_DT": "20261002",
+                    "TRADE_DT": "20261003",
                     "PRODCD": "B034",
                     "PRODNM": "고급휘발유",
-                    "PRICE": "2342.95",
-                    "DIFF": "+1.98"
+                    "PRICE": "2346.88",
+                    "DIFF": "+3.38"
                 },
                 {
-                    "TRADE_DT": "20261002",
+                    "TRADE_DT": "20261003",
                     "PRODCD": "B027",
                     "PRODNM": "휘발유",
-                    "PRICE": "1857.61",
-                    "DIFF": "-0.11"
+                    "PRICE": "1857.60",
+                    "DIFF": "-0.13"
                 },
                 {
-                    "TRADE_DT": "20261002",
+                    "TRADE_DT": "20261003",
                     "PRODCD": "D047",
                     "PRODNM": "자동차용경유",
-                    "PRICE": "1843.71",
-                    "DIFF": "+0.05"
+                    "PRICE": "1843.38",
+                    "DIFF": "-0.40"
                 },
                 {
-                    "TRADE_DT": "20261002",
+                    "TRADE_DT": "20261003",
                     "PRODCD": "C004",
                     "PRODNM": "실내등유",
-                    "PRICE": "1572.46",
-                    "DIFF": "-0.55"
+                    "PRICE": "1572.93",
+                    "DIFF": "+0.28"
                 },
                 {
-                    "TRADE_DT": "20261002",
+                    "TRADE_DT": "20261003",
                     "PRODCD": "K015",
                     "PRODNM": "자동차용부탄",
-                    "PRICE": "1141.58",
-                    "DIFF": "+2.44"
+                    "PRICE": "1142.46",
+                    "DIFF": "+0.63"
                 }
             ]
         }
@@ -47,358 +47,358 @@
                     "SIDOCD": "00",
                     "SIDONM": "전국",
                     "PRODCD": "B027",
-                    "PRICE": 1857.61,
-                    "DIFF": 1857.61
+                    "PRICE": 1857.6,
+                    "DIFF": 1857.6
                 },
                 {
                     "SIDOCD": "00",
                     "SIDONM": "전국",
                     "PRODCD": "B034",
-                    "PRICE": 2342.95,
-                    "DIFF": 2342.95
+                    "PRICE": 2346.88,
+                    "DIFF": 2346.88
                 },
                 {
                     "SIDOCD": "00",
                     "SIDONM": "전국",
                     "PRODCD": "C004",
-                    "PRICE": 1572.46,
-                    "DIFF": 1572.46
+                    "PRICE": 1572.93,
+                    "DIFF": 1572.93
                 },
                 {
                     "SIDOCD": "00",
                     "SIDONM": "전국",
                     "PRODCD": "D047",
-                    "PRICE": 1843.71,
-                    "DIFF": 1843.71
+                    "PRICE": 1843.38,
+                    "DIFF": 1843.38
                 },
                 {
                     "SIDOCD": "00",
                     "SIDONM": "전국",
                     "PRODCD": "K015",
-                    "PRICE": 1141.58,
-                    "DIFF": 1141.58
+                    "PRICE": 1142.46,
+                    "DIFF": 1142.46
                 },
                 {
                     "SIDOCD": "01",
                     "SIDONM": "서울",
                     "PRODCD": "B027",
-                    "PRICE": 1903.62,
-                    "DIFF": -0.01
+                    "PRICE": 1903.45,
+                    "DIFF": -0.1
                 },
                 {
                     "SIDOCD": "01",
                     "SIDONM": "서울",
                     "PRODCD": "B034",
-                    "PRICE": 2411.88,
-                    "DIFF": 0.97
+                    "PRICE": 2416.8,
+                    "DIFF": 4.76
                 },
                 {
                     "SIDOCD": "01",
                     "SIDONM": "서울",
                     "PRODCD": "C004",
-                    "PRICE": 1680.65,
-                    "DIFF": 7.16
+                    "PRICE": 1684.54,
+                    "DIFF": -1.1
                 },
                 {
                     "SIDOCD": "01",
                     "SIDONM": "서울",
                     "PRODCD": "D047",
-                    "PRICE": 1886.4,
-                    "DIFF": 0.08
+                    "PRICE": 1886.14,
+                    "DIFF": -0.22
                 },
                 {
                     "SIDOCD": "01",
                     "SIDONM": "서울",
                     "PRODCD": "K015",
                     "PRICE": 1203.06,
-                    "DIFF": 0.67
+                    "DIFF": 0.0
                 },
                 {
                     "SIDOCD": "02",
                     "SIDONM": "경기",
                     "PRODCD": "B027",
-                    "PRICE": 1854.36,
-                    "DIFF": -0.38
+                    "PRICE": 1854.26,
+                    "DIFF": -0.49
                 },
                 {
                     "SIDOCD": "02",
                     "SIDONM": "경기",
                     "PRODCD": "B034",
-                    "PRICE": 2344.75,
-                    "DIFF": 3.79
+                    "PRICE": 2347.09,
+                    "DIFF": 1.78
                 },
                 {
                     "SIDOCD": "02",
                     "SIDONM": "경기",
                     "PRODCD": "C004",
-                    "PRICE": 1587.2,
-                    "DIFF": -0.4
+                    "PRICE": 1586.76,
+                    "DIFF": -0.13
                 },
                 {
                     "SIDOCD": "02",
                     "SIDONM": "경기",
                     "PRODCD": "D047",
-                    "PRICE": 1838.34,
-                    "DIFF": 0.01
+                    "PRICE": 1837.68,
+                    "DIFF": -0.79
                 },
                 {
                     "SIDOCD": "02",
                     "SIDONM": "경기",
                     "PRODCD": "K015",
-                    "PRICE": 1143.74,
-                    "DIFF": 1.26
+                    "PRICE": 1144.62,
+                    "DIFF": 0.88
                 },
                 {
                     "SIDOCD": "03",
                     "SIDONM": "강원",
                     "PRODCD": "B027",
-                    "PRICE": 1868.73,
-                    "DIFF": -0.07
+                    "PRICE": 1868.95,
+                    "DIFF": -0.03
                 },
                 {
                     "SIDOCD": "03",
                     "SIDONM": "강원",
                     "PRODCD": "B034",
-                    "PRICE": 2332.66,
-                    "DIFF": 3.78
+                    "PRICE": 2336.21,
+                    "DIFF": 1.96
                 },
                 {
                     "SIDOCD": "03",
                     "SIDONM": "강원",
                     "PRODCD": "C004",
-                    "PRICE": 1553.76,
-                    "DIFF": -0.59
+                    "PRICE": 1553.54,
+                    "DIFF": -0.84
                 },
                 {
                     "SIDOCD": "03",
                     "SIDONM": "강원",
                     "PRODCD": "D047",
-                    "PRICE": 1858.79,
-                    "DIFF": -0.4
+                    "PRICE": 1859.21,
+                    "DIFF": -0.08
                 },
                 {
                     "SIDOCD": "03",
                     "SIDONM": "강원",
                     "PRODCD": "K015",
-                    "PRICE": 1172.45,
-                    "DIFF": 2.75
+                    "PRICE": 1172.82,
+                    "DIFF": 0.42
                 },
                 {
                     "SIDOCD": "04",
                     "SIDONM": "충북",
                     "PRODCD": "B027",
-                    "PRICE": 1864.8,
-                    "DIFF": -0.24
+                    "PRICE": 1865.11,
+                    "DIFF": 0.38
                 },
                 {
                     "SIDOCD": "04",
                     "SIDONM": "충북",
                     "PRODCD": "B034",
-                    "PRICE": 2341.89,
-                    "DIFF": 0.46
+                    "PRICE": 2351.77,
+                    "DIFF": 7.66
                 },
                 {
                     "SIDOCD": "04",
                     "SIDONM": "충북",
                     "PRODCD": "C004",
-                    "PRICE": 1563.08,
-                    "DIFF": -0.25
+                    "PRICE": 1563.92,
+                    "DIFF": -0.1
                 },
                 {
                     "SIDOCD": "04",
                     "SIDONM": "충북",
                     "PRODCD": "D047",
-                    "PRICE": 1850.73,
-                    "DIFF": -0.28
+                    "PRICE": 1850.88,
+                    "DIFF": 0.07
                 },
                 {
                     "SIDOCD": "04",
                     "SIDONM": "충북",
                     "PRODCD": "K015",
-                    "PRICE": 1128.05,
-                    "DIFF": 2.7
+                    "PRICE": 1130.32,
+                    "DIFF": 1.94
                 },
                 {
                     "SIDOCD": "05",
                     "SIDONM": "충남",
                     "PRODCD": "B027",
-                    "PRICE": 1863.9,
-                    "DIFF": 0.13
+                    "PRICE": 1863.65,
+                    "DIFF": -0.51
                 },
                 {
                     "SIDOCD": "05",
                     "SIDONM": "충남",
                     "PRODCD": "B034",
-                    "PRICE": 2339.86,
-                    "DIFF": 0.65
+                    "PRICE": 2346.72,
+                    "DIFF": 5.28
                 },
                 {
                     "SIDOCD": "05",
                     "SIDONM": "충남",
                     "PRODCD": "C004",
-                    "PRICE": 1558.55,
-                    "DIFF": -0.97
+                    "PRICE": 1559.63,
+                    "DIFF": 1.22
                 },
                 {
                     "SIDOCD": "05",
                     "SIDONM": "충남",
                     "PRODCD": "D047",
-                    "PRICE": 1849.94,
-                    "DIFF": -0.11
+                    "PRICE": 1849.58,
+                    "DIFF": -0.63
                 },
                 {
                     "SIDOCD": "05",
                     "SIDONM": "충남",
                     "PRODCD": "K015",
-                    "PRICE": 1146.87,
-                    "DIFF": 2.63
+                    "PRICE": 1147.43,
+                    "DIFF": 0.26
                 },
                 {
                     "SIDOCD": "06",
                     "SIDONM": "전북",
                     "PRODCD": "B027",
-                    "PRICE": 1858.55,
-                    "DIFF": 0.37
+                    "PRICE": 1858.39,
+                    "DIFF": 0.15
                 },
                 {
                     "SIDOCD": "06",
                     "SIDONM": "전북",
                     "PRODCD": "B034",
-                    "PRICE": 2337.51,
-                    "DIFF": 0.65
+                    "PRICE": 2339.8,
+                    "DIFF": 2.29
                 },
                 {
                     "SIDOCD": "06",
                     "SIDONM": "전북",
                     "PRODCD": "C004",
-                    "PRICE": 1554.7,
-                    "DIFF": -1.39
-                },
-                {
-                    "SIDOCD": "06",
-                    "SIDONM": "전북",
-                    "PRODCD": "D047",
-                    "PRICE": 1846.25,
+                    "PRICE": 1554.91,
                     "DIFF": 0.44
                 },
                 {
                     "SIDOCD": "06",
                     "SIDONM": "전북",
+                    "PRODCD": "D047",
+                    "PRICE": 1846.05,
+                    "DIFF": 0.11
+                },
+                {
+                    "SIDOCD": "06",
+                    "SIDONM": "전북",
                     "PRODCD": "K015",
-                    "PRICE": 1105.78,
-                    "DIFF": 3.04
+                    "PRICE": 1106.53,
+                    "DIFF": 0.24
                 },
                 {
                     "SIDOCD": "08",
                     "SIDONM": "경북",
                     "PRODCD": "B027",
-                    "PRICE": 1851.79,
-                    "DIFF": -0.24
+                    "PRICE": 1851.73,
+                    "DIFF": -0.03
                 },
                 {
                     "SIDOCD": "08",
                     "SIDONM": "경북",
                     "PRODCD": "B034",
-                    "PRICE": 2302.48,
-                    "DIFF": 1.31
+                    "PRICE": 2307.86,
+                    "DIFF": 5.38
                 },
                 {
                     "SIDOCD": "08",
                     "SIDONM": "경북",
                     "PRODCD": "C004",
-                    "PRICE": 1565.32,
-                    "DIFF": -0.33
+                    "PRICE": 1565.96,
+                    "DIFF": 0.29
                 },
                 {
                     "SIDOCD": "08",
                     "SIDONM": "경북",
                     "PRODCD": "D047",
-                    "PRICE": 1838.09,
-                    "DIFF": -0.09
+                    "PRICE": 1838.08,
+                    "DIFF": -0.21
                 },
                 {
                     "SIDOCD": "08",
                     "SIDONM": "경북",
                     "PRODCD": "K015",
-                    "PRICE": 1127.76,
-                    "DIFF": 2.71
+                    "PRICE": 1130.2,
+                    "DIFF": 1.4
                 },
                 {
                     "SIDOCD": "09",
                     "SIDONM": "경남",
                     "PRODCD": "B027",
-                    "PRICE": 1852.33,
-                    "DIFF": -0.19
+                    "PRICE": 1852.54,
+                    "DIFF": 0.03
                 },
                 {
                     "SIDOCD": "09",
                     "SIDONM": "경남",
                     "PRODCD": "B034",
-                    "PRICE": 2341.74,
-                    "DIFF": -1.11
+                    "PRICE": 2341.36,
+                    "DIFF": -0.34
                 },
                 {
                     "SIDOCD": "09",
                     "SIDONM": "경남",
                     "PRODCD": "C004",
-                    "PRICE": 1582.39,
-                    "DIFF": -1.2
+                    "PRICE": 1582.33,
+                    "DIFF": -0.16
                 },
                 {
                     "SIDOCD": "09",
                     "SIDONM": "경남",
                     "PRODCD": "D047",
-                    "PRICE": 1837.81,
-                    "DIFF": 0.12
+                    "PRICE": 1837.02,
+                    "DIFF": -0.92
                 },
                 {
                     "SIDOCD": "09",
                     "SIDONM": "경남",
                     "PRODCD": "K015",
-                    "PRICE": 1119.66,
-                    "DIFF": 7.71
+                    "PRICE": 1121.15,
+                    "DIFF": 0.97
                 },
                 {
                     "SIDOCD": "10",
                     "SIDONM": "부산",
                     "PRODCD": "B027",
-                    "PRICE": 1840.3,
-                    "DIFF": -0.2
+                    "PRICE": 1840.17,
+                    "DIFF": -0.43
                 },
                 {
                     "SIDOCD": "10",
                     "SIDONM": "부산",
                     "PRODCD": "B034",
-                    "PRICE": 2324.3,
-                    "DIFF": 1.01
+                    "PRICE": 2328.99,
+                    "DIFF": 3.4
                 },
                 {
                     "SIDOCD": "10",
                     "SIDONM": "부산",
                     "PRODCD": "C004",
-                    "PRICE": 1622.17,
-                    "DIFF": -4.14
+                    "PRICE": 1625.59,
+                    "DIFF": 3.94
                 },
                 {
                     "SIDOCD": "10",
                     "SIDONM": "부산",
                     "PRODCD": "D047",
-                    "PRICE": 1825.45,
-                    "DIFF": 1.81
+                    "PRICE": 1824.22,
+                    "DIFF": -0.17
                 },
                 {
                     "SIDOCD": "10",
                     "SIDONM": "부산",
                     "PRODCD": "K015",
-                    "PRICE": 1131.5,
-                    "DIFF": 1.7
+                    "PRICE": 1131.83,
+                    "DIFF": 0.16
                 },
                 {
                     "SIDOCD": "11",
                     "SIDONM": "제주",
                     "PRODCD": "B027",
-                    "PRICE": 1888.65,
-                    "DIFF": 0.27
+                    "PRICE": 1888.86,
+                    "DIFF": 0.25
                 },
                 {
                     "SIDOCD": "11",
@@ -411,190 +411,190 @@
                     "SIDOCD": "11",
                     "SIDONM": "제주",
                     "PRODCD": "C004",
-                    "PRICE": 1563.4,
-                    "DIFF": -0.19
+                    "PRICE": 1563.61,
+                    "DIFF": 0.21
                 },
                 {
                     "SIDOCD": "11",
                     "SIDONM": "제주",
                     "PRODCD": "D047",
-                    "PRICE": 1871.86,
-                    "DIFF": 0.07
+                    "PRICE": 1872.11,
+                    "DIFF": 0.32
                 },
                 {
                     "SIDOCD": "11",
                     "SIDONM": "제주",
                     "PRODCD": "K015",
-                    "PRICE": 1181.5,
-                    "DIFF": 0.16
+                    "PRICE": 1181.47,
+                    "DIFF": 0.0
                 },
                 {
                     "SIDOCD": "14",
                     "SIDONM": "대구",
                     "PRODCD": "B027",
-                    "PRICE": 1829.11,
-                    "DIFF": -0.4
-                },
-                {
-                    "SIDOCD": "14",
-                    "SIDONM": "대구",
-                    "PRODCD": "B034",
-                    "PRICE": 2335.1,
-                    "DIFF": 1.83
-                },
-                {
-                    "SIDOCD": "14",
-                    "SIDONM": "대구",
-                    "PRODCD": "C004",
-                    "PRICE": 1593.44,
+                    "PRICE": 1829.06,
                     "DIFF": -0.06
                 },
                 {
                     "SIDOCD": "14",
                     "SIDONM": "대구",
+                    "PRODCD": "B034",
+                    "PRICE": 2340.0,
+                    "DIFF": 4.9
+                },
+                {
+                    "SIDOCD": "14",
+                    "SIDONM": "대구",
+                    "PRODCD": "C004",
+                    "PRICE": 1595.17,
+                    "DIFF": 2.1
+                },
+                {
+                    "SIDOCD": "14",
+                    "SIDONM": "대구",
                     "PRODCD": "D047",
-                    "PRICE": 1814.55,
-                    "DIFF": -0.53
+                    "PRICE": 1814.79,
+                    "DIFF": -0.34
                 },
                 {
                     "SIDOCD": "14",
                     "SIDONM": "대구",
                     "PRODCD": "K015",
                     "PRICE": 1162.34,
-                    "DIFF": -0.02
-                },
-                {
-                    "SIDOCD": "15",
-                    "SIDONM": "인천",
-                    "PRODCD": "B027",
-                    "PRICE": 1846.04,
-                    "DIFF": -0.06
-                },
-                {
-                    "SIDOCD": "15",
-                    "SIDONM": "인천",
-                    "PRODCD": "B034",
-                    "PRICE": 2311.98,
                     "DIFF": 0.0
                 },
                 {
                     "SIDOCD": "15",
                     "SIDONM": "인천",
+                    "PRODCD": "B027",
+                    "PRICE": 1845.92,
+                    "DIFF": -0.08
+                },
+                {
+                    "SIDOCD": "15",
+                    "SIDONM": "인천",
+                    "PRODCD": "B034",
+                    "PRICE": 2315.68,
+                    "DIFF": 3.56
+                },
+                {
+                    "SIDOCD": "15",
+                    "SIDONM": "인천",
                     "PRODCD": "C004",
-                    "PRICE": 1588.55,
-                    "DIFF": -1.55
+                    "PRICE": 1589.08,
+                    "DIFF": -0.03
                 },
                 {
                     "SIDOCD": "15",
                     "SIDONM": "인천",
                     "PRODCD": "D047",
-                    "PRICE": 1829.73,
-                    "DIFF": -0.3
+                    "PRICE": 1829.4,
+                    "DIFF": -0.63
                 },
                 {
                     "SIDOCD": "15",
                     "SIDONM": "인천",
                     "PRODCD": "K015",
-                    "PRICE": 1140.93,
-                    "DIFF": 2.44
+                    "PRICE": 1140.89,
+                    "DIFF": -0.04
                 },
                 {
                     "SIDOCD": "17",
                     "SIDONM": "대전",
                     "PRODCD": "B027",
-                    "PRICE": 1836.67,
-                    "DIFF": -0.2
+                    "PRICE": 1836.85,
+                    "DIFF": 0.18
                 },
                 {
                     "SIDOCD": "17",
                     "SIDONM": "대전",
                     "PRODCD": "B034",
-                    "PRICE": 2315.93,
-                    "DIFF": 6.39
+                    "PRICE": 2325.89,
+                    "DIFF": 9.19
                 },
                 {
                     "SIDOCD": "17",
                     "SIDONM": "대전",
                     "PRODCD": "C004",
-                    "PRICE": 1581.83,
-                    "DIFF": 0.65
+                    "PRICE": 1582.88,
+                    "DIFF": -3.12
                 },
                 {
                     "SIDOCD": "17",
                     "SIDONM": "대전",
                     "PRODCD": "D047",
-                    "PRICE": 1824.82,
-                    "DIFF": 0.16
+                    "PRICE": 1824.43,
+                    "DIFF": -0.03
                 },
                 {
                     "SIDOCD": "17",
                     "SIDONM": "대전",
                     "PRODCD": "K015",
                     "PRICE": 1116.67,
-                    "DIFF": 1.31
+                    "DIFF": 0.0
                 },
                 {
                     "SIDOCD": "18",
                     "SIDONM": "울산",
                     "PRODCD": "B027",
-                    "PRICE": 1835.81,
-                    "DIFF": 0.05
+                    "PRICE": 1835.23,
+                    "DIFF": -0.35
                 },
                 {
                     "SIDOCD": "18",
                     "SIDONM": "울산",
                     "PRODCD": "B034",
-                    "PRICE": 2293.8,
+                    "PRICE": 2294.07,
                     "DIFF": 0.0
                 },
                 {
                     "SIDOCD": "18",
                     "SIDONM": "울산",
                     "PRODCD": "C004",
-                    "PRICE": 1595.0,
-                    "DIFF": 0.0
+                    "PRICE": 1597.04,
+                    "DIFF": 0.65
                 },
                 {
                     "SIDOCD": "18",
                     "SIDONM": "울산",
                     "PRODCD": "D047",
-                    "PRICE": 1825.78,
-                    "DIFF": -0.82
+                    "PRICE": 1825.39,
+                    "DIFF": -0.98
                 },
                 {
                     "SIDOCD": "18",
                     "SIDONM": "울산",
                     "PRODCD": "K015",
                     "PRICE": 1150.0,
-                    "DIFF": -0.16
+                    "DIFF": 0.0
                 },
                 {
                     "SIDOCD": "19",
                     "SIDONM": "세종",
                     "PRODCD": "B027",
                     "PRICE": 1855.0,
-                    "DIFF": -0.16
+                    "DIFF": -0.47
                 },
                 {
                     "SIDOCD": "19",
                     "SIDONM": "세종",
                     "PRODCD": "B034",
-                    "PRICE": 2316.57,
-                    "DIFF": 0.0
+                    "PRICE": 2319.71,
+                    "DIFF": 3.14
                 },
                 {
                     "SIDOCD": "19",
                     "SIDONM": "세종",
                     "PRODCD": "C004",
-                    "PRICE": 1536.67,
-                    "DIFF": 3.71
+                    "PRICE": 1542.5,
+                    "DIFF": 5.83
                 },
                 {
                     "SIDOCD": "19",
                     "SIDONM": "세종",
                     "PRODCD": "D047",
-                    "PRICE": 1841.94,
-                    "DIFF": 0.39
+                    "PRICE": 1841.16,
+                    "DIFF": -0.15
                 },
                 {
                     "SIDOCD": "19",
@@ -607,36 +607,36 @@
                     "SIDOCD": "20",
                     "SIDONM": "전남광주",
                     "PRODCD": "B027",
-                    "PRICE": 1861.69,
-                    "DIFF": 0.04
+                    "PRICE": 1861.81,
+                    "DIFF": 0.12
                 },
                 {
                     "SIDOCD": "20",
                     "SIDONM": "전남광주",
                     "PRODCD": "B034",
-                    "PRICE": 2331.09,
-                    "DIFF": 1.61
+                    "PRICE": 2336.25,
+                    "DIFF": 4.6
                 },
                 {
                     "SIDOCD": "20",
                     "SIDONM": "전남광주",
                     "PRODCD": "C004",
-                    "PRICE": 1561.76,
-                    "DIFF": -0.73
+                    "PRICE": 1561.05,
+                    "DIFF": 0.08
                 },
                 {
                     "SIDOCD": "20",
                     "SIDONM": "전남광주",
                     "PRODCD": "D047",
-                    "PRICE": 1851.07,
-                    "DIFF": 0.42
+                    "PRICE": 1850.69,
+                    "DIFF": -0.13
                 },
                 {
                     "SIDOCD": "20",
                     "SIDONM": "전남광주",
                     "PRODCD": "K015",
-                    "PRICE": 1153.25,
-                    "DIFF": 1.78
+                    "PRICE": 1153.28,
+                    "DIFF": 0.03
                 }
             ]
         }
